@@ -1,15 +1,35 @@
 /*! Додайте стилізацію ваших єлементів тут */
 
 body {
-    background-color: #fffbda;
+    background-image: url(../images/background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .title-main {
     text-align: center;
     line-height: 4em;
-    color: darkred;
+    color:indigo;
 }
 
 .list {
-    margin-left: 4em;;
+    width: 1000px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    border-radius: 40px;
+}
+
+.link {
+    color: aliceblue;
+    transition-property: color, fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover {
+    color: indigo;
 }
