@@ -41,7 +41,7 @@ console.log("My favorite string is", myString);
 
 //! Код виконаного завдання
 
-const myNumber = 470 + 5;
+const myNumber = 465 + 10;
 
 console.log("My favorite number is", myNumber);
 
@@ -87,4 +87,4 @@ atention
     ? alert("Дякую за підтвердження!")
     : alert("Дію відмінено!")
 
-console.log(atention)
+console.log(atention);
