@@ -20,8 +20,14 @@ const myFavoriteActor = "Sean Justin Penn";
 
 const male = "my favorite actor's name";
 
-const lastCharacter = "n";
+let lastCharacter = myFavoriteActor[myFavoriteActor.length - 1]; // var.1
+
+// let lastCharacter = myFavoriteActor.slice(-1); var.2
+
+lastCharacter = lastCharacter.toUpperCase();
 
 console.log(lastCharacter);
 
 console.log("The last letter in", male, myFavoriteActor, lastCharacter.toUpperCase() + "!");
+
+// console.log(`The last letter in ${male} ${myFavoriteActress} is \"${lastCharacter}\"!`);
