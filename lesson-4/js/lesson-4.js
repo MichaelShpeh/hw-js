@@ -11,9 +11,11 @@ let formFirst = prompt("Заповніть цю форму");
 
 if (form1 && formFirst) {
     alert("Обидва поля заповнені")
+} else if (form1 === null && formFirst === null || form1.trim() === "" && formFirst.trim() === "") {
+    alert("Ви не ввели текст!")
 } else {
     alert("Не всі поля заповнені")
-} ; 
+};
 
 //? Створити розмітку з двома числовими полями та кнопкою.При натисканні на кнопку перевіряти,
 //? чи сума значень полів більша за 10, якщо так, то виводити
@@ -21,15 +23,21 @@ if (form1 && formFirst) {
 
 //! Код виконаного завдання
 
-const form2 = Number(prompt("Введіть енну кількість значень"));
-const formSecond = Number(prompt("Введіть енну кількість значень"));
+let form2 = prompt("Введіть будь-яке число");
+let formSecond = prompt("Введіть ще одне число");
 
-if (form2 > 10 && formSecond > 10 ) {
-    alert("Сума більша за 10");
-} else if (isNaN(form2) || isNaN(formSecond)) {
+if (form2 === null || formSecond === null || form2.trim() === "" || formSecond.trim() === "") {
+    alert("Поля немають бути пустими!")
+}  else if (isNaN(Number(form2)) || isNaN(Number(formSecond))) {
     alert("Це не число");
 } else {
-    alert("Сума менша або дорівнює 10");
+    form2 = Number(form2);
+    formSecond = Number(formSecond);
+    if (form2 > 10 && formSecond > 10) {
+        alert("Сума більша за 10");
+    } else {
+        alert("Сума менша або дорівнює 10");
+    }
 }
 
 //? Створити розмітку з текстовим полем та кнопкою.При натисканні на кнопку перевіряти,
@@ -60,6 +68,8 @@ const form4 = prompt("Введіть число");
 
 if (form4 > 10 && form4 < 20) {
     alert("Число входить в діапазон від 10 до 20")
+} else if (form4 === null || form4.trim() === "") {
+    alert("Це не число");
 } else {
    alert("Число не входить в діапазон від 10 до 20")
 };
@@ -81,21 +91,27 @@ const form5 = prompt("Введіть ім'я")
 if (form5.length < 3) {
     alert("Ім'я має містити 3 символи або більше!")
 } else {
-    alert("Вітаємо!")
+    alert("Вітаємо! ", form5)
 };
 
 const form6 = prompt("Введіть email")
 
-if (form6.includes("@") && form6.includes(".")) {
-    alert("Вітаємо!")
+if (!form6) {
+    alert("Поле не може бути порожнім!");
+} else if (form6.length < 15) {
+    alert("Email закороткий!");
+} else if (form6.includes("@") && form6.includes(".")) {
+    alert("Вітаємо!");
 } else {
-    alert(`Email повинен містити "@" та "."`)
-};
+    alert(`Email повинен містити "@" та "."`);
+}
 
 const form7 = prompt("Введіть пароль")
 
 if (form7.length < 6) {
     alert("Пароль має містити 6 символів або більше!")
+} else if (form7 === null || form7.trim() === "") {
+    alert("Це поле немає бути пустим!")
 } else {
     alert("Вітаємо!")
 };
