@@ -5,15 +5,15 @@
 
 //! Код виконаного завдання
 
-// let form1 = prompt("Заповніть цю форму");    
+let form1 = prompt("Заповніть цю форму");    
 
-// let formFirst = prompt("Заповніть цю форму");
+let formFirst = prompt("Заповніть цю форму");
 
-// if (form1 && formFirst) {
-//     alert("Обидва поля заповнені")
-// } else {
-//     alert("Не всі поля заповнені")
-// } ; 
+if (form1 && formFirst) {
+    alert("Обидва поля заповнені")
+} else {
+    alert("Не всі поля заповнені")
+} ; 
 
 //? Створити розмітку з двома числовими полями та кнопкою.При натисканні на кнопку перевіряти,
 //? чи сума значень полів більша за 10, якщо так, то виводити
@@ -38,15 +38,15 @@ if (form2 > 10 && formSecond > 10 ) {
 
 //! Код виконаного завдання
 
-// const form3 = prompt("Заповніть форму");
+const form3 = prompt("Заповніть форму");
 
-// console.log(form3.includes("JavaScript"));
+console.log(form3.includes("JavaScript"));
 
-// if (form3.includes("JavaScript")) {
-//     alert("Текст містить слово JavaScript")
-// } else {
-//     alert("Текст не містить слово JavaScript")
-// };
+if (form3.includes("JavaScript")) {
+    alert("Текст містить слово JavaScript")
+} else {
+    alert("Текст не містить слово JavaScript")
+};
 
 
 //? Створити розмітку з формою з полями введення та кнопкою.
@@ -56,13 +56,13 @@ if (form2 > 10 && formSecond > 10 ) {
 
 //! Код виконаного завдання
 
-// const form4 = prompt("Введіть число");
+const form4 = prompt("Введіть число");
 
-// if (form4 > 10 && form4 < 20) {
-//     alert("Число входить в діапазон від 10 до 20")
-// } else {
-//    alert("Число не входить в діапазон від 10 до 20")
-// };
+if (form4 > 10 && form4 < 20) {
+    alert("Число входить в діапазон від 10 до 20")
+} else {
+   alert("Число не входить в діапазон від 10 до 20")
+};
 
 
 //? Створити розмітку з формою з полями введення та кнопкою.
@@ -74,28 +74,28 @@ if (form2 > 10 && formSecond > 10 ) {
 
 //! Код виконаного завдання
 
-// console.log("Завдання 5");
+console.log("Завдання 5");
 
-// const form5 = prompt("Введіть ім'я")
+const form5 = prompt("Введіть ім'я")
 
-// if (form5.length < 3) {
-//     alert("Ім'я має містити 3 символи або більше!")
-// } else {
-//     alert("Вітаємо!")
-// };
+if (form5.length < 3) {
+    alert("Ім'я має містити 3 символи або більше!")
+} else {
+    alert("Вітаємо!")
+};
 
-// const form6 = prompt("Введіть email")
+const form6 = prompt("Введіть email")
 
-// if (form6.includes("@") && form6.includes(".")) {
-//     alert("Вітаємо!")
-// } else {
-//     alert(`Email повинен містити "@" та "."`)
-// };
+if (form6.includes("@") && form6.includes(".")) {
+    alert("Вітаємо!")
+} else {
+    alert(`Email повинен містити "@" та "."`)
+};
 
-// const form7 = prompt("Введіть пароль")
+const form7 = prompt("Введіть пароль")
 
-// if (form7.length < 6) {
-//     alert("Пароль має містити 6 символів або більше!")
-// } else {
-//     alert("Вітаємо!")
-// };
+if (form7.length < 6) {
+    alert("Пароль має містити 6 символів або більше!")
+} else {
+    alert("Вітаємо!")
+};
