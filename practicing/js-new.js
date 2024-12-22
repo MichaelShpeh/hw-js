@@ -46,3 +46,6 @@ if (number < x1) {
 } else {
     console.log(`Число ${number} НІКУДИ не входить!`);
 };
+
+//! урок 5
+
