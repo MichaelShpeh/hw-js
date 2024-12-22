@@ -84,12 +84,12 @@ if (form4 > 10 && form4 < 20) {
 
 //! Код виконаного завдання
 
-console.log("Завдання 5");
-
 const form5 = prompt("Введіть ім'я")
 
-if (form5.length < 3) {
-    alert("Ім'я має містити 3 символи або більше!")
+if (form5.trim() === "") {
+    alert("Поле не має бути пустим!");
+} else if (form5.trim().length < 3) {
+    alert("Ім'я має містити 3 символи або більше і без пробілів!");
 } else {
     alert("Вітаємо! ", form5)
 };
@@ -108,10 +108,10 @@ if (!form6) {
 
 const form7 = prompt("Введіть пароль")
 
-if (form7.length < 6) {
-    alert("Пароль має містити 6 символів або більше!")
-} else if (form7 === null || form7.trim() === "") {
-    alert("Це поле немає бути пустим!")
+if (form7 === null || form7.trim() === "") {
+    alert("Це поле не має бути пустим!");
+} else if (form7.trim().length < 6) {
+    alert("Пароль має містити 6 символів або більше та без пробілів!");
 } else {
-    alert("Вітаємо!")
-};
+    alert("Вітаємо!");
+}
