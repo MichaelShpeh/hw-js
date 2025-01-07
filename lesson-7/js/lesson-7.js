@@ -206,11 +206,10 @@ console.log(
 );
 //! Код виконаного завдання
 
-const myArray = [1488, 'Hello', 3.14, 'World', 'JavaScript']
 
-console.log('myArray:', myArray)
-for (let i = 0; i < myArray.length; i++) {
-    console.log(`myArray[${i}]: ${myArray[i]}`);
+console.log('array:', array)
+for (let i = 0; i < array.length; i++) {
+    console.log(`array[${i}]: ${array[i]}`);
 };
 
 console.log("-------------------------------------------");
@@ -274,7 +273,7 @@ console.log(
 //! Код виконаного завдання
 
 for (const element of array) {
-    if (element === Number(element)) {
+    if (typeof element === "number") {
         console.log("Перший елемент число: ", element);
         break;
     };
@@ -293,8 +292,10 @@ console.log(
 //! Код виконаного завдання
 
 for (const value of array) {
-    console.log(value);
-    break;
+    if (typeof value == "string") {
+        console.log("Перше рядкове значення: ", value);
+        break;
+    };
 };
 
 console.log("-------------------------------------------");
@@ -312,7 +313,7 @@ console.log(
 
 
 for (let numberValue of array) {
-    if (numberValue === Number(numberValue)) {
+    if (typeof numberValue === "number") {
         console.log(numberValue);
     } else {
         continue;
@@ -332,7 +333,7 @@ console.log(
 //! Код виконаного завдання
 
 for (numberValue of array) {
-    if (numberValue === String(numberValue)) {
+    if (typeof numberValue === "string") {
         console.log(numberValue);
     } else {
         continue;
@@ -354,20 +355,15 @@ console.log(
 //! Код виконаного завдання
 
 for (numberValue of array) {
-    if (numberValue === Number(numberValue)) {
+    if (typeof numberValue === "number") {
         numberValue = String(numberValue + 1);
-        console.log(numberValue);
-    } else {
+        console.log("ArrayItem: ", numberValue);
         continue;
     };
+    console.log("ArrayItem: ", numberValue);
 };
 
-for (numberValue of array) {
-    console.log(numberValue);
-    continue;
-};
-
-console.log(array);
+console.log("array: ", array);
 
 console.log("-------------------------------------------");
 
@@ -386,12 +382,10 @@ console.log(
 for (let i = 0; i < array.length; i++) {
     if (array[i] == Number(array[i])) {
         array[i] = String(array[i] + 1);
+        console.log(`ArrayItem[${[i]}]: `, array[i]);
+        continue;
     };
-};
-
-for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
-    continue;
+    console.log(`ArrayItem[${[i]}]: `, array[i]);
 };
 
 console.log(array);
