@@ -9,11 +9,13 @@ console.log("Завдання 1");
 
 const firstArray = [1, 2, 3];
 
-console.log(firstArray);
+let arrB = firstArray;
+
+console.log("Масив до змін: ", arrB);
 
 firstArray[1] = 10;
 
-console.log(firstArray);
+console.log("Масив після змін: ", firstArray);
 
 //? Створити масив із трьох рядків. Додати до масиву ще одну рядків.
 
@@ -25,11 +27,13 @@ console.log("Завдання 2");
 
 const secondArray = ["Вітер грає з листям, мов із музикою.", "Очі світилися, як зірки на нічному небі.", "Серце шукає тепла у кожному слові."];
 
-console.log(secondArray);
+arrB = secondArray;
+
+console.log("Масив до змін: ", arrB);
 
 secondArray[3] = "Тиша обіймає, залишаючи місце для думок.";
 
-console.log(secondArray);
+console.log("Масив після змін: ", secondArray);
 
 //? Створити скрипт який поверне суму всіх чисел в масиві.
 
@@ -52,11 +56,11 @@ console.log("Завдання 4");
 
 const fourthArray = [1, 2, 3, 4, 5];
 
-console.log("Масив: ", fourthArray)
+console.log("Масив: ", fourthArray);
 
 for (let element = 0; element < fourthArray.length; element++) {
-    console.log("елемент масиву: ", element);
-}
+    console.log("елемент масиву: ", fourthArray[element]);
+};
 
 //? Створити масив із 5-ти рядків.
 //? Вивести на екран кожен рядок з масиву, який містить більше 5 - ти символів.
@@ -88,9 +92,15 @@ console.log("Завдання 6");
 
 const sixthArray = [331, 31, 76, 12, 68, 475, 51, 271, 15, 16];
 
-const maxNumber = Math.max(...sixthArray);
+let maxNumber = sixthArray[0];
 
-console.log(maxNumber);
+for (let i = 0; i < sixthArray.length; i++) {
+    if (sixthArray[i] > maxNumber) {
+        maxNumber = sixthArray[i];
+    };
+};
+
+console.log("максимальне значення", maxNumber)
 
 //? Створити масив з 10-ти чисел.
 //? Знайти всі парні числа в масиві та вивести їх на екран.
@@ -104,7 +114,7 @@ console.log("Завдання 7");
 const seventhArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 for (let i = 0; i <= 10; i++) {
-    if (i % 2 == 1) {
+    if (seventhArray[i] % 2 == 0) {
         console.log("Парне число: ", seventhArray[i]);
     };
 };
