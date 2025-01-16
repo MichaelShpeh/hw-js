@@ -50,13 +50,18 @@ console.log("-----------------------");
 
 console.log("Завдання 4");
 
-let array = [1, 2, 3, 4, 5];
+let array = [1, 2, 3, 4, 5, 505, 132];
 
-for (number = 0; number < array.length; number++) {
-    console.log("число масиву: ", number);
+number = 0;
+
+while (array[number] <= array.length || array[number] > array.length) {
+
+    console.log(`${number} елемент циклу:`, array[number]);
+
+    number++;
 };
     
-//? творити масив із числами від 1 до 10. За допомогою циклу for
+//? створити масив із числами від 1 до 10. За допомогою циклу for
 //? пройтися по масиву та вивести на екран всі числа, крім числа 7. Якщо зустрінете число 7,
 //? закінчити виконання циклу за допомогою оператора break.
 
@@ -68,14 +73,14 @@ console.log("Завдання 5");
 
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-for (number = 0; number < array.length; number++) {
-    if (number === 7) {
-        break;
+
+for (let number = 0; number < array.length; number++) {
+    if (array[number] === 7) {
+        continue;
     };
 
-    console.log("число масиву: ", number)
+    console.log(`${number + 1} елемент циклу:`, array[number]);
 };
-
 //? Створити скрипт, який виводить на екран всі числа, які менші за n. Якщо зустрічається число,
 //? що більше або дорівнює n, цикл повинен бути закінчений за допомогою break.
 
@@ -87,8 +92,17 @@ console.log("Завдання 6");
 
 const n = 14;
 
-for (number = 1; number < n; number += 1) {
+number = 1;
+
+while (number) {
+
     console.log("число", number);
+
+    number++;
+
+    if (number >= n) {
+        break
+    }
 };
 
 //? За допомогою циклу while вивести на екран всі числа від 1 до 20, крім чисел, кратних 3.
@@ -100,9 +114,16 @@ console.log("-----------------------");
 
 console.log("Завдання 7");
 
-for (number = 1; number <= 20; number += 1) {
+number = 1;
+
+while (number <= 20) {
+
     if (number % 3 == 0) {
+        number++;
         continue;
-    } 
-        console.log("число не кратне 3: ", number);
+    }; 
+
+    console.log("число не кратне 3: ", number);
+
+    number++;
 };
