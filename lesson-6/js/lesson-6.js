@@ -71,16 +71,14 @@ console.log("-----------------------");
 
 console.log("Завдання 5");
 
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-
-for (let number = 0; number < array.length; number++) {
-    if (array[number] === 7) {
-        continue;
-    };
-
-    console.log(`${number + 1} елемент циклу:`, array[number]);
+const arrayTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("arrayTen:", arrayTen);
+for (let i = 0; i < arrayTen.length; i++) {
+    if (arrayTen[i] === 7) break;
+    console.log(`arrayTen[${i}] = ${arrayTen[i]}`);
 };
+
 //? Створити скрипт, який виводить на екран всі числа, які менші за n. Якщо зустрічається число,
 //? що більше або дорівнює n, цикл повинен бути закінчений за допомогою break.
 
