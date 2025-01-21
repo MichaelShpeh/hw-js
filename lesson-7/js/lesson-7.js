@@ -60,8 +60,8 @@ console.log("Масив: ", fourthArray);
 
 let element = 0;
 
-for (fourthArray[element] = 1; fourthArray[element] < fourthArray.length || fourthArray[element] > fourthArray.length; element++) {
-    console.log(`${element} елемент масиву: `, fourthArray[element]);
+for (fourthArray[element]; element < fourthArray.length; element++) {
+    console.log(`${element} індекс масиву: `, fourthArray[element]);
 };
 
 //? Створити масив із 5-ти рядків.
@@ -96,9 +96,11 @@ const sixthArray = [331, 31, 76, 12, 68, 475, 51, 271, 15, 16];
 
 let maxNumber = sixthArray[0];
 
-for (let i = 0; i < sixthArray.length; i++) {
-    if (sixthArray[i] > maxNumber) {
-        maxNumber = sixthArray[i];
+let iForSixthArray = 0;
+
+for (sixthArray[iForSixthArray]; iForSixthArray < sixthArray.length; iForSixthArray++) {
+    if (sixthArray[iForSixthArray] > maxNumber) {
+        maxNumber = sixthArray[iForSixthArray];
     };
 };
 
@@ -115,7 +117,9 @@ console.log("Завдання 7");
 
 const seventhArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-for (let i = 0; i <= 10; i++) {
+let i = 0;
+
+for (seventhArray[i]; i <= seventhArray.length; i++) {
     if (seventhArray[i] % 2 == 0) {
         console.log("Парне число: ", seventhArray[i]);
     };
