@@ -52,13 +52,13 @@ console.log("Завдання 4");
 
 let array = [1, 2, 3, 4, 5, 505, 132];
 
-number = 0;
+let numberFour = 0;
 
-while (array[number] <= array.length || array[number] > array.length) {
+while (numberFour < array.length) {
 
-    console.log(`${number} елемент циклу:`, array[number]);
+    console.log(`${numberFour} елемент циклу:`, array[numberFour]);
 
-    number++;
+    numberFour++;
 };
     
 //? створити масив із числами від 1 до 10. За допомогою циклу for
@@ -92,15 +92,15 @@ const n = 14;
 
 number = 1;
 
-while (number) {
+while (number < n) {
 
     console.log("число", number);
 
     number++;
 
     if (number >= n) {
-        break
-    }
+        break;
+    };
 };
 
 //? За допомогою циклу while вивести на екран всі числа від 1 до 20, крім чисел, кратних 3.

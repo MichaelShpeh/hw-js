@@ -54,12 +54,14 @@ console.log("-----------------------");
 
 console.log("Завдання 4");
 
-const fourthArray = [1, 2, 3, 4, 5];
+const fourthArray = [1, 2, 7, 9, 10];
 
 console.log("Масив: ", fourthArray);
 
-for (let element = 0; element < fourthArray.length; element++) {
-    console.log("елемент масиву: ", fourthArray[element]);
+let element = 0;
+
+for (fourthArray[element] = 1; fourthArray[element] < fourthArray.length || fourthArray[element] > fourthArray.length; element++) {
+    console.log(`${element} елемент масиву: `, fourthArray[element]);
 };
 
 //? Створити масив із 5-ти рядків.
@@ -77,7 +79,7 @@ for (let i = 0; i < fithArray.length; i++) {
     const element = fithArray[i]; 
 
     if (element.length > 5) { 
-        console.log("рядок: ", element);
+        console.log(`${i} елемент: `, element);
     };
 };
 
