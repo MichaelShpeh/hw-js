@@ -35,7 +35,9 @@ logItems(arrayNum1);
 
 //! Код виконаного завдання
 
-
+function calculateEngravingPrice(message, pricePerWord) {
+    
+ };
 
 
 // console.log("-----------------------");
@@ -97,7 +99,16 @@ console.log("-----------------------");
 
 //! Код виконаного завдання
 
+function checkForSpam(message) {
+    if (message.includes("spam") || message.includes("sale")) {
+        return true;
+    } else {
+        return false;
+    };
 
+};
+
+console.log(checkForSpam("Check our site for -50% sale!"));
 
 
 console.log("-----------------------");
