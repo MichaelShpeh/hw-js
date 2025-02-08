@@ -4,27 +4,26 @@
 //?  який для кожного елемента масиву буде виводити в консоль повідомлення
 //?   в форматі[номер елемента]-[значення елемента].
 
+//? Нумерація повинна починатися з 1. Наприклад, для першого елемента масиву['Mango', 'Poly', 'Ajax']
+//?  з індексом 0 буде виведено '1 - Mango', а для індексу 2 виведе '3 - Ajax'.
+
+
+
 //! Код виконаного завдання
 
-const arrayNum = [8, 13, 21, 34, 55];
+console.log("1 Завдання");
 
-const arrayNum1 = [80, 130, 210, 340, 550]
+const arrayNum = [8, 13, 21, 34, 55];
 
 
 function logItems(array) {
     for (let i = 0; i < array.length; i++) {
-        console.log(`позиція елемента ${i} `, array[i]);
+        console.log(`позиція елемента ${i + 1} `, array[i]);
         console.log("-----------------------");
      };
 };
 
 logItems(arrayNum);
-
-logItems(arrayNum1);
-
-// console.log("-----------------------");
-
-
 
 //!     Завдання 2
 
@@ -35,12 +34,29 @@ logItems(arrayNum1);
 
 //! Код виконаного завдання
 
+console.log("2 Завдання");
+
 function calculateEngravingPrice(message, pricePerWord) {
     
- };
+    let words = 0;
+    let inWord = false;
+
+    for (const character of message.trim()) {
+        if (character !== ' ' && !inWord) {
+            words++;
+            inWord = true;
+        } else if (character === ' ') {
+            inWord = false;
+        };
+    };
+
+    return words * pricePerWord;
+}
+ 
+console.log(calculateEngravingPrice("01.05.1996 + 15.08.1999", 12));
 
 
-// console.log("-----------------------");
+console.log("-----------------------");
 
 //!     Завдання 3
 
@@ -49,6 +65,8 @@ function calculateEngravingPrice(message, pricePerWord) {
 //?  і повертає ПЕРШЕ найдовше слово в цьому рядку.
 
 //! Код виконаного завдання
+
+console.log("3 Завдання");
 
 function findLongestWord(string) {
     const elements = string.split(" ");
@@ -75,6 +93,8 @@ console.log("-----------------------");
 
 //! Код виконаного завдання
 
+console.log("4 Завдання");
+
 function formatString(string) {
     if (string.length > 40) {
         string = string.slice(0, 40);
@@ -98,6 +118,8 @@ console.log("-----------------------");
 //?  в рядку можуть бути в довільному регістрі.
 
 //! Код виконаного завдання
+
+console.log("5 Завдання");
 
 function checkForSpam(message) {
     if (message.includes("spam") || message.includes("sale")) {
@@ -128,6 +150,22 @@ console.log("-----------------------");
 
 //! Код виконаного завдання
 
+console.log("6 Завдання");
+
+let questionForUser = '';
+
+const input = questionForUser;
+
+const numbers = [];
+
+do {
+    questionForUser = prompt("Введіть число");
+    if (questionForUser === '' || Number(questionForUser)) {
+        numbers.push(questionForUser);
+    };
+} while (questionForUser === '' || Number(questionForUser));
+
+console.log(numbers);
 
 
 
