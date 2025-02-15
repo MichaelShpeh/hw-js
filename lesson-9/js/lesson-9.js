@@ -145,7 +145,7 @@ console.log("-----------------------");
 //?  пір, поки користувач не натисне Cancel в prompt.
 //? •  Після того як користувач припинив введення натиснувши Cancel,
 //?  якщо масив не порожній, необхідно порахувати суму всіх елементів масиву
-//?  і записати її в змінну total.Використовуй цикл for або for...of.Після чого в
+//?  і записати її в змінну total. Використовуй цикл for або for...of.Після чого в
 //?  консоль виведи рядок 'Загальна сума чисел дорівнює [сума]'.
 
 //! Код виконаного завдання
@@ -154,18 +154,35 @@ console.log("6 Завдання");
 
 let questionForUser = '';
 
-const input = questionForUser;
-
 const numbers = [];
 
 do {
-    questionForUser = prompt("Введіть число");
-    if (questionForUser === '' || Number(questionForUser)) {
-        numbers.push(questionForUser);
-    };
+    questionForUser = prompt("Введіть число для вирахування суми чисел натисніть Скасувати");
+    numbers.push(questionForUser);
 } while (questionForUser === '' || Number(questionForUser));
 
 console.log(numbers);
+
+if (numbers[0] == null) {
+    console.log("Масив не має бути пустим!")
+} else {
+    function total(numbers) {
+        let total = 0;
+
+        for (number of numbers) {
+
+            number = Number(number);
+
+            total += number;
+
+        };
+
+        return total;
+
+    };
+
+    console.log(total(numbers));
+};
 
 
 
