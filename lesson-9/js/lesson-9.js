@@ -55,6 +55,18 @@ function calculateEngravingPrice(message, pricePerWord) {
  
 console.log(calculateEngravingPrice("01.05.1996 + 15.08.1999", 12));
 
+//! 2 Варіант ☻
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//     const arrayMessage = message.split(" ");
+
+//     const wordСount = arrayMessage.length;
+
+//     const totalPrice = wordСount * pricePerWord;
+
+//     return totalPrice;
+// };
+
 
 console.log("-----------------------");
 
