@@ -169,15 +169,27 @@ let questionForUser = '';
 const numbers = [];
 
 do {
-    questionForUser = prompt("Введіть число для вирахування суми чисел натисніть Скасувати");
-    numbers.push(questionForUser);
-} while (questionForUser === '' || Number(questionForUser));
+    questionForUser = prompt("Введіть число для вирахування суми чисел, натисніть Скасувати");
+
+    if (questionForUser === null) {
+        break;
+    };
+
+    if (questionForUser.trim() === '' || isNaN(Number(questionForUser))) {
+        continue;
+    };
+
+    numbers.push(Number(questionForUser));
+       
+} while (Number(questionForUser));
 
 console.log(numbers);
 
-if (numbers[0] == null) {
-    console.log("Масив не має бути пустим!")
+
+if (isNaN(Number(questionForUser))) {
+    alert("Це не число");
 } else {
+
     function total(numbers) {
         let total = 0;
 
@@ -192,7 +204,6 @@ if (numbers[0] == null) {
         return total;
 
     };
-
     console.log(total(numbers));
 };
 
