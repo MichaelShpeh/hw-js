@@ -10,6 +10,10 @@ console.log(
 //? - з використання анонімної стрілкової колбек-функції з неявним поверненням.
 //! Код виконаного завдання
 
+const consolesHelloWorld = function () {
+
+};
+
 console.log("--------------------------------------------------");
 
 
@@ -32,6 +36,25 @@ console.log(
 //! Код виконаного завдання
 const min = 1;
 const max = 10;
+
+const generatesRandomNumber = () => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const guessNumber = function (min, max, randomNumber, generatesRandomNumber) {
+
+    const generatedNumber = generatesRandomNumber();
+
+    if (generatedNumber === randomNumber) {
+        console.log("✅ Ви вгадали число!");
+    } else {
+        console.log("❌ Ви НЕ вгадали число");
+    };
+
+};
+
+console.log("Function:");
+
+console.log(guessNumber(min, max, 5, generatesRandomNumber));
+
 
 console.log("--------------------------------------------------");
 
@@ -68,13 +91,13 @@ console.log(
 //? до кожного елементу масиву та повертати новий масив,
 //? що містить результати застосування колбек-функції до кожного елементу.
 //! Код виконаного завдання
-const applyCallbackToEachElement = (array, callback) => {
-    //todo: написати тіло функції
-};
-const array = [1, 2, 3, 4, 5];
-const squareCallback = ; //todo: написати код функції
-const result = applyCallbackToEachElement(array, squareCallback);
-console.log("result:", result); //! [1, 4, 9, 16, 25]
+// const applyCallbackToEachElement = (array, callback) => {
+//     //todo: написати тіло функції
+// };
+// const array = [1, 2, 3, 4, 5];
+// const squareCallback = ; //todo: написати код функції
+// const result = applyCallbackToEachElement(array, squareCallback);
+// console.log("result:", result); //! [1, 4, 9, 16, 25]
 
 console.log("--------------------------------------------------");
 
@@ -91,14 +114,14 @@ console.log(
 //? В якості функції вищого порядку використайте стрілкову функцію,
 //? останнім аргументом якої є стрілкова колбек-функція.
 //! Код виконаного завдання
-const price = 100;
-const discount = 10;
-const calculateDiscountedPrice = (price, discount, callback) => {
-    //todo: написати тіло функції
-};
-const showDiscountedPrice = ; //todo: написати код функції
-const discountPrice = applyCallbackToEachElement(price, discount, showDiscountedPrice);
-console.log(discountPrice); //! Discount price: 90
+// const price = 100;
+// const discount = 10;
+// const calculateDiscountedPrice = (price, discount, callback) => {
+//     //todo: написати тіло функції
+// };
+// const showDiscountedPrice = ; //todo: написати код функції
+// const discountPrice = applyCallbackToEachElement(price, discount, showDiscountedPrice);
+// console.log(discountPrice); //! Discount price: 90
 
 console.log("--------------------------------------------------");
 
