@@ -11,8 +11,14 @@ console.log(
 //! Код виконаного завдання
 
 const consolesHelloWorld = function () {
-
+    return "Hello World!";
 };
+
+function secondCallsConsolesHelloWorld(callback) {
+    callback();
+};
+
+secondCallsConsolesHelloWorld(() => console.log(consolesHelloWorld()));
 
 console.log("--------------------------------------------------");
 
@@ -64,19 +70,27 @@ console.log(
     "%c [3] ",
     "color: yellow; background-color: #2274A5",
 );
-//? Створи стрілкову колбек-функцію generatesRandomNumber1to5 з неявним поверненням,
-//? яка генерує та повертає випадкове число від 1 до 5.
-//? Створи стрілкову колбек-функцію convertSize з неявним поверненням,
-//? яка приймає будь яке числове значення, додає до нього "px" 
-//? та повертає результат у такому вигляді:
-//? наприклад, приймає 2 -> повертає 2px, або приймає 5 -> повертає 5px.
-//? Зроби функцію вищого порядку convertRandomNumberSize, 
-//? яка приймає два аргумента:
-//? функцію generatesRandomNumber1to5 та функцію convertSize яка приймає
-//? випадкове число від 1 до 5 від функції generatesRandomNumber1to5.
-//? Функція convertRandomNumberSize повертає результат 
-//? перетворення випадкового числа від 1 до 5 від функції convertSize.
+// ? Створи стрілкову колбек-функцію generatesRandomNumber1to5 з неявним поверненням,
+// ? яка генерує та повертає випадкове число від 1 до 5.
+// ? Створи стрілкову колбек-функцію convertSize з неявним поверненням,
+// ? яка приймає будь яке числове значення, додає до нього "px" 
+// ? та повертає результат у такому вигляді:
+// ? наприклад, приймає 2 -> повертає 2px, або приймає 5 -> повертає 5px.
+// ? Зроби функцію вищого порядку convertRandomNumberSize, 
+// ? яка приймає два аргумента:
+// ? функцію generatesRandomNumber1to5 та функцію convertSize яка приймає
+// ? випадкове число від 1 до 5 від функції generatesRandomNumber1to5.
+// ? Функція convertRandomNumberSize повертає результат 
+// ? перетворення випадкового числа від 1 до 5 від функції convertSize.
 //! Код виконаного завдання
+
+const generatesRandomNumber1to5 = () => Math.floor(Math.random() * 5) + 1;
+
+const convertSize = a => `${a}px`;
+
+const convertRandomNumberSize = (randomFunc, sizeFunc) => sizeFunc(randomFunc());
+
+console.log(convertRandomNumberSize(generatesRandomNumber1to5, convertSize));
 
 console.log("--------------------------------------------------");
 
@@ -91,13 +105,13 @@ console.log(
 //? до кожного елементу масиву та повертати новий масив,
 //? що містить результати застосування колбек-функції до кожного елементу.
 //! Код виконаного завдання
-// const applyCallbackToEachElement = (array, callback) => {
-//     //todo: написати тіло функції
-// };
-// const array = [1, 2, 3, 4, 5];
-// const squareCallback = ; //todo: написати код функції
-// const result = applyCallbackToEachElement(array, squareCallback);
-// console.log("result:", result); //! [1, 4, 9, 16, 25]
+const applyCallbackToEachElement = (array, callback) => {
+    return array.map(callback);
+};
+const array = [1, 2, 3, 4, 5];
+const squareCallback = number => number ** 2; //todo: написати код функції
+const result = applyCallbackToEachElement(array, squareCallback);
+console.log("result:", result); //! [1, 4, 9, 16, 25]
 
 console.log("--------------------------------------------------");
 
@@ -113,15 +127,16 @@ console.log(
 //? відсоток знижки, та колбек-функцію як аргументи.
 //? В якості функції вищого порядку використайте стрілкову функцію,
 //? останнім аргументом якої є стрілкова колбек-функція.
-//! Код виконаного завдання
-// const price = 100;
-// const discount = 10;
-// const calculateDiscountedPrice = (price, discount, callback) => {
-//     //todo: написати тіло функції
-// };
-// const showDiscountedPrice = ; //todo: написати код функції
-// const discountPrice = applyCallbackToEachElement(price, discount, showDiscountedPrice);
-// console.log(discountPrice); //! Discount price: 90
+// ! Код виконаного завдання
+const price = 100;
+const discount = 10;
+const calculateDiscountedPrice = (price, discount, callback) => {
+    const discountedPrice = price - discount;
+    return callback(discountedPrice);
+};
+const showDiscountedPrice = (discountedPrice) => `Discount price: ${discountedPrice}`; //todo: написати код функції
+const discountPrice = calculateDiscountedPrice(price, discount, showDiscountedPrice);
+console.log(discountPrice); //! Discount price: 90
 
 console.log("--------------------------------------------------");
 
