@@ -26,6 +26,43 @@ console.log(
 //? ✳️ За допомогою виклика методу "withdraw" об'єкта "bankAccount" зніми кошти з рахуноку.
 //! Код виконаного завдання
 
+const bankAccount = {
+    ownerName: "Jack Nicholson",
+    accountNumber: 1111222233334444,
+    balance: 10000,
+};
+
+
+
+console.log("Our object berofe: ", bankAccount);
+
+bankAccount.deposit = function (money) {
+    console.log('deposit');
+
+    this.balance += money;
+
+    console.log("Our balance: ", this.balance);
+};
+
+bankAccount.withdraw = function (money) {
+    console.log('withdraw');
+
+    if (this.balance < money) {
+        console.log("⛔️ Не достатньо коштів на вашому рахунку!");
+        return;
+    };
+
+    this.balance -= money;
+
+    console.log("Our balance: ", this.balance);
+};
+
+console.log("Our object after: ", bankAccount);
+
+console.log(bankAccount.deposit(1000));
+
+console.log(bankAccount.withdraw(11000));
+
 console.log("--------------------------------------------------");
 
 
@@ -47,6 +84,24 @@ console.log(
 //? “Температура нижче 0 градусів Цельсія” і навпаки,
 //? дублюючи ці повідомлення  в консоль.
 //! Код виконаного завдання
+
+// const weather = {
+//     temperature: 21,
+//     humidity: 68,
+//     windSpeed: 1,
+// };
+
+// weather.workWithUser = function (a) {
+//     if (a <= 0) {
+//         console.log(true);
+//     } else {
+//         console.log(false);
+//     };
+// };
+ 
+// const questionForUser = prompt("Введіть температуру");
+
+// console.log(weather.workWithUser(questionForUser));
 
 console.log("--------------------------------------------------");
 
@@ -73,6 +128,41 @@ console.log(
 
 console.log("--------------------------------------------------");
 
+const user = {
+    name: "Alex",
+    email: "alex222@gmail.com",
+    password: 12345678,
+};
+
+user.login = function () { 
+    if (this.name === "") {
+        console.log(this.name, "Поле не має бути пустим!");
+    } else if (this.name.trim().length < 3) {
+        console.log(this.name, "Ім'я має містити 3 символи або більше і без пробілів!");
+    } else {
+        console.log("Вітаємо ", this.name + "!")
+    };
+
+    if (!this.email) {
+        console.log(this.email, "Поле не може бути порожнім!");
+    } else if (this.email.length < 15) {
+        console.log(this.email, "Email закороткий!");
+    } else if (this.email.includes("@") && this.email.includes(".")) {
+        console.log("Електронна адреса: alex222@gmail.com");
+    } else {
+        console.log(`${this.email} Email повинен містити "@" та "."`);
+    };
+
+    if (this.password === null || this.password === "") {
+        console.log("Це поле не має бути пустим!");
+    } else if (this.password.length < 6) {
+        console.log(this.password, "Пароль має містити 6 символів або більше та без пробілів!");
+    } else {
+        console.log("Пароль: ", 12345678);
+    };
+};
+
+console.log(user.login())
 
 //todo [4]
 console.log(
@@ -93,5 +183,34 @@ console.log(
 //? Якщо метод повернув "false",
 //? то колір тексту поля title в консолі повинен бути червоний.
 //! Код виконаного завдання
+
+const movie = {
+    title: "Зелена книга",
+    director: "Пітер Фарреллі",
+    year: 2018,
+    rating: 9.2,
+};
+
+movie.ConsolesBoolean = function (rating) {
+    if (rating > 8) {
+        return true;
+    } else if (rating <= 8) {
+        return false;
+    }; 
+};
+ 
+console.log(movie.ConsolesBoolean(movie.rating));
+
+if (movie.ConsolesBoolean(movie.rating)) {
+    console.log("%c Зелена книга", "color: green");
+} else {
+    console.log("%c Зелена книга", "color: red");
+ };
+
+console.log(movie.director);
+
+console.log(movie.year);
+
+console.log(movie.rating);
 
 console.log("--------------------------------------------------");
