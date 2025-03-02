@@ -26,46 +26,46 @@ console.log(
 //? ✳️ За допомогою виклика методу "withdraw" об'єкта "bankAccount" зніми кошти з рахуноку.
 //! Код виконаного завдання
 
-const bankAccount = {
-    ownerName: "Jack Nicholson",
-    accountNumber: 1111222233334444,
-    balance: 10000,
-};
+// const bankAccount = {
+//     ownerName: "Jack Nicholson",
+//     accountNumber: 1111222233334444,
+//     balance: 10000,
+// };
 
-console.log("Our object berofe: ", bankAccount);
+// console.log("Our object berofe: ", bankAccount);
 
-bankAccount.deposit = function (money) {
-    console.log('deposit');
+// bankAccount.deposit = function (money) {
+//     console.log('deposit');
 
-    money = prompt('Введіть суму поповнення коштів');
+//     money = prompt('Введіть суму поповнення коштів');
 
-    this.balance -= money
+//     this.balance -= money
 
-    return `Our balance: ${this.balance += Number(money)}`;
-};
+//     return `Our balance: ${this.balance += Number(money)}`;
+// };
 
-bankAccount.withdraw = function (money) {
-    console.log('withdraw');
+// bankAccount.withdraw = function (money) {
+//     console.log('withdraw');
 
-    money = prompt('Введіть суму зняття коштів');
+//     money = prompt('Введіть суму зняття коштів');
 
-    if (this.balance < money) {
-        console.log("⛔️ Не достатньо коштів на вашому рахунку!");
-        return `Our balance: ${this.balance}`;
-    };
+//     if (this.balance < money) {
+//         console.log("⛔️ Не достатньо коштів на вашому рахунку!");
+//         return `Our balance: ${this.balance}`;
+//     };
 
-    this.balance -= money
+//     this.balance -= money
 
-    return `Our balance: ${this.balance -= money}`; 
-};
+//     return `Our balance: ${this.balance -= money}`; 
+// };
 
-console.log("Our object after: ", bankAccount);
+// console.log("Our object after: ", bankAccount);
 
-console.log(bankAccount.deposit());
+// console.log(bankAccount.deposit());
 
-console.log(bankAccount.withdraw());
+// console.log(bankAccount.withdraw());
 
-console.log("--------------------------------------------------");
+// console.log("--------------------------------------------------");
 
 
 //todo [2]
@@ -130,41 +130,101 @@ console.log(
 
 console.log("--------------------------------------------------");
 
+//! Неробочий варіант
+
+// const user = {
+//     name: "Alex",
+//     email: "alex222@gmail.com",
+//     password: 12345678,
+// };
+
+// user.login = function () { 
+//     const formAsksName = prompt("Введіть ім'я");
+//     this.name = formAsksName;
+//     if (this.name === "") {
+//         return `${this.name} Поле не має бути пустим!`;
+//     } else if (this.name.trim().length < 3) {
+//         return `${ this.name} Ім'я має містити 3 символи або більше та без пробілів!`;
+//     } else {
+//         console.log("Вітаємо ", this.name + "!");
+//     };
+
+//     const formAsksEmail = prompt("Введіть email");
+
+//     this.email = formAsksEmail;
+
+//     if (!this.email) {
+//         console.log(this.email, "Поле не може бути порожнім!");
+//     } else if (this.email.length < 15) {
+//         return `${this.email} "Email закороткий!"`;
+//     } else if (this.email.includes("@") && this.email.includes(".")) {
+//         return `Електронна адреса: ${this.email}`;
+//     } else {
+//         return `${this.email} Email повинен містити "@" та "."`;
+//     };
+
+//     const formAsksPassword = prompt("Введіть пароль");
+
+//     this.password = formAsksPassword;
+
+//     if (this.password === null || this.password === "") {
+//         console.log("Це поле не має бути пустим!");
+//     } else if (this.password.length < 6) {
+//         return `${this.password} "Пароль має містити 6 символів або більше та без пробілів!"`;
+//     } else {
+//         return `Пароль: ${this.password}`;
+//     };
+// };
+
+// console.log(user.login());
+
 const user = {
     name: "Alex",
     email: "alex222@gmail.com",
     password: 12345678,
 };
 
-user.login = function () { 
-    if (this.name === "") {
-        console.log(this.name, "Поле не має бути пустим!");
-    } else if (this.name.trim().length < 3) {
-        console.log(this.name, "Ім'я має містити 3 символи або більше і без пробілів!");
+user.login = function () {
+    let errors = [];
+
+    const formAsksName = prompt("Введіть ім'я").trim();
+    if (!formAsksName) {
+        errors.push("❌ Поле 'Ім'я' не має бути пустим!");
+    } else if (formAsksName.length < 3) {
+        errors.push("❌ Ім'я має містити 3 символи або більше!");
     } else {
-        console.log("Вітаємо ", this.name + "!")
+        this.name = formAsksName;
     };
 
-    if (!this.email) {
-        console.log(this.email, "Поле не може бути порожнім!");
-    } else if (this.email.length < 15) {
-        console.log(this.email, "Email закороткий!");
-    } else if (this.email.includes("@") && this.email.includes(".")) {
-        console.log("Електронна адреса: alex222@gmail.com");
+    const formAsksEmail = prompt("Введіть email").trim();
+    if (!formAsksEmail) {
+        errors.push("❌ Поле 'Email' не може бути порожнім!");
+    } else if (formAsksEmail.length < 15) {
+        errors.push("❌ Email закороткий!");
+    } else if (!formAsksEmail.includes("@") || !formAsksEmail.includes(".")) {
+        errors.push("❌ Email повинен містити '@' та '.'!");
     } else {
-        console.log(`${this.email} Email повинен містити "@" та "."`);
+        this.email = formAsksEmail;
     };
 
-    if (this.password === null || this.password === "") {
-        console.log("Це поле не має бути пустим!");
-    } else if (this.password.length < 6) {
-        console.log(this.password, "Пароль має містити 6 символів або більше та без пробілів!");
+    const formAsksPassword = prompt("Введіть пароль").trim();
+    if (!formAsksPassword) {
+        errors.push("❌ Поле 'Пароль' не має бути пустим!");
+    } else if (formAsksPassword.length < 6) {
+        errors.push("❌ Пароль має містити 6 символів або більше!");
     } else {
-        console.log("Пароль: ", 12345678);
+        this.password = formAsksPassword;
     };
+
+    if (errors.length > 0) {
+        return errors.join("\n");
+    };
+
+    return `✅ Вітаємо, ${this.name}! Ви успішно увійшли в систему.`;
 };
 
-console.log(user.login())
+console.log(user.login());
+
 
 //todo [4]
 console.log(
