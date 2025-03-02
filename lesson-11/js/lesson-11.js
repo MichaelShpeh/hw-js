@@ -32,36 +32,38 @@ const bankAccount = {
     balance: 10000,
 };
 
-
-
 console.log("Our object berofe: ", bankAccount);
 
 bankAccount.deposit = function (money) {
     console.log('deposit');
 
-    this.balance += money;
+    money = prompt('Введіть суму поповнення коштів');
 
-    console.log("Our balance: ", this.balance);
+    this.balance -= money
+
+    return `Our balance: ${this.balance += Number(money)}`;
 };
 
 bankAccount.withdraw = function (money) {
     console.log('withdraw');
 
+    money = prompt('Введіть суму зняття коштів');
+
     if (this.balance < money) {
         console.log("⛔️ Не достатньо коштів на вашому рахунку!");
-        return;
+        return `Our balance: ${this.balance}`;
     };
 
-    this.balance -= money;
+    this.balance -= money
 
-    console.log("Our balance: ", this.balance);
+    return `Our balance: ${this.balance -= money}`; 
 };
 
 console.log("Our object after: ", bankAccount);
 
-console.log(bankAccount.deposit(1000));
+console.log(bankAccount.deposit());
 
-console.log(bankAccount.withdraw(11000));
+console.log(bankAccount.withdraw());
 
 console.log("--------------------------------------------------");
 
