@@ -26,46 +26,46 @@ console.log(
 //? ✳️ За допомогою виклика методу "withdraw" об'єкта "bankAccount" зніми кошти з рахуноку.
 //! Код виконаного завдання
 
-// const bankAccount = {
-//     ownerName: "Jack Nicholson",
-//     accountNumber: 1111222233334444,
-//     balance: 10000,
-// };
+const bankAccount = {
+    ownerName: "Jack Nicholson",
+    accountNumber: 1111222233334444,
+    balance: 10000,
+};
 
-// console.log("Our object berofe: ", bankAccount);
+console.log("Our object berofe: ", bankAccount);
 
-// bankAccount.deposit = function (money) {
-//     console.log('deposit');
+bankAccount.deposit = function (money) {
+    console.log('deposit');
 
-//     money = prompt('Введіть суму поповнення коштів');
+    money = prompt('Введіть суму поповнення коштів');
 
-//     this.balance -= money
+    this.balance -= money
 
-//     return `Our balance: ${this.balance += Number(money)}`;
-// };
+    return `Our balance: ${this.balance += Number(money)}`;
+};
 
-// bankAccount.withdraw = function (money) {
-//     console.log('withdraw');
+bankAccount.withdraw = function (money) {
+    console.log('withdraw');
 
-//     money = prompt('Введіть суму зняття коштів');
+    money = prompt('Введіть суму зняття коштів');
 
-//     if (this.balance < money) {
-//         console.log("⛔️ Не достатньо коштів на вашому рахунку!");
-//         return `Our balance: ${this.balance}`;
-//     };
+    if (this.balance < money) {
+        console.log("⛔️ Не достатньо коштів на вашому рахунку!");
+        return `Our balance: ${this.balance}`;
+    };
 
-//     this.balance -= money
+    this.balance -= money
 
-//     return `Our balance: ${this.balance -= money}`; 
-// };
+    return `Our balance: ${this.balance -= money}`; 
+};
 
-// console.log("Our object after: ", bankAccount);
+console.log("Our object after: ", bankAccount);
 
-// console.log(bankAccount.deposit());
+console.log(bankAccount.deposit());
 
-// console.log(bankAccount.withdraw());
+console.log(bankAccount.withdraw());
 
-// console.log("--------------------------------------------------");
+console.log("--------------------------------------------------");
 
 
 //todo [2]
@@ -87,23 +87,23 @@ console.log(
 //? дублюючи ці повідомлення  в консоль.
 //! Код виконаного завдання
 
-// const weather = {
-//     temperature: 21,
-//     humidity: 68,
-//     windSpeed: 1,
-// };
+const weather = {
+    temperature: 21,
+    humidity: 68,
+    windSpeed: 1,
+};
 
-// weather.workWithUser = function (a) {
-//     if (a <= 0) {
-//         console.log(true);
-//     } else {
-//         console.log(false);
-//     };
-// };
+weather.workWithUser = function (a) {
+    if (a <= 0) {
+        console.log(true);
+    } else {
+        console.log(false);
+    };
+};
  
-// const questionForUser = prompt("Введіть температуру");
+const questionForUser = prompt("Введіть температуру");
 
-// console.log(weather.workWithUser(questionForUser));
+console.log(weather.workWithUser(questionForUser));
 
 console.log("--------------------------------------------------");
 
