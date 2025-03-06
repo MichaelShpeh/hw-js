@@ -15,6 +15,18 @@ const user = {
 };
 //! Код виконаного завдання
 
+let userBefore = user;
+
+console.log("user before:", userBefore);
+
+for (property in user) {
+    user.mood = 'happy';
+    user.hobby = 'skydiving';
+    user.premium = false;
+};
+
+console.log("user after:", user);
+
 console.log("--------------------------------------------------");
 
 
@@ -29,6 +41,8 @@ console.log(
 //! Код виконаного завдання
 const countProps = function (obj) {
     //! твій код
+    const amountOfProperties = Object.keys(obj).length;
+    return `кількість властивостей в об'єкті: ${amountOfProperties}` 
 };
 //! Викличи функції для перевірки працездатності твоєї реалізації.
 console.log(countProps({})); //! 0
@@ -49,6 +63,12 @@ console.log(
 //! Код виконаного завдання
 const findBestEmployee = function (employees) {
     //! твій код
+    const mostExercises = Math.max(...Object.values(employees));
+    for (const [name, tasks] of Object.entries(employees)) {
+        if (tasks === mostExercises) {
+            return `${name}: ${tasks}`;
+        };
+    };
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
@@ -91,6 +111,8 @@ console.log(
 //! Код виконаного завдання
 const countTotalSalary = function (employees) {
     //! твій код
+    const sum = Object.values(employees).reduce((acc, num) => acc + num, 0);
+    return "Сума зарплат:", sum;
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
