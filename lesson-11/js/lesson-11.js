@@ -39,8 +39,6 @@ bankAccount.deposit = function (money) {
 
     money = prompt('Введіть суму поповнення коштів');
 
-    this.balance -= money
-
     return `Our balance: ${this.balance += Number(money)}`;
 };
 
@@ -54,12 +52,10 @@ bankAccount.withdraw = function (money) {
         return `Our balance: ${this.balance}`;
     };
 
-    this.balance -= money
-
     return `Our balance: ${this.balance -= money}`; 
 };
 
-console.log("Our object after: ", bankAccount);
+// console.log("Our object after: ", bankAccount);
 
 console.log(bankAccount.deposit());
 
@@ -87,23 +83,23 @@ console.log(
 //? дублюючи ці повідомлення  в консоль.
 //! Код виконаного завдання
 
-const weather = {
-    temperature: 21,
-    humidity: 68,
-    windSpeed: 1,
-};
+// const weather = {
+//     temperature: 21,
+//     humidity: 68,
+//     windSpeed: 1,
+// };
 
-weather.workWithUser = function (a) {
-    if (a <= 0) {
-        console.log(true);
-    } else {
-        console.log(false);
-    };
-};
+// weather.workWithUser = function (a) {
+//     if (a <= 0) {
+//         console.log(true);
+//     } else {
+//         console.log(false);
+//     };
+// };
  
-const questionForUser = prompt("Введіть температуру");
+// const questionForUser = prompt("Введіть температуру");
 
-console.log(weather.workWithUser(questionForUser));
+// console.log(weather.workWithUser(questionForUser));
 
 console.log("--------------------------------------------------");
 
@@ -178,52 +174,52 @@ console.log("--------------------------------------------------");
 
 // console.log(user.login());
 
-const user = {
-    name: "Alex",
-    email: "alex222@gmail.com",
-    password: 12345678,
-};
+// const user = {
+//     name: "Alex",
+//     email: "alex222@gmail.com",
+//     password: 12345678,
+// };
 
-user.login = function () {
-    let errors = [];
+// user.login = function () {
+//     let errors = [];
 
-    const formAsksName = prompt("Введіть ім'я").trim();
-    if (!formAsksName) {
-        errors.push("❌ Поле 'Ім'я' не має бути пустим!");
-    } else if (formAsksName.length < 3) {
-        errors.push("❌ Ім'я має містити 3 символи або більше!");
-    } else {
-        this.name = formAsksName;
-    };
+//     const formAsksName = prompt("Введіть ім'я").trim();
+//     if (!formAsksName) {
+//         errors.push("❌ Поле 'Ім'я' не має бути пустим!");
+//     } else if (formAsksName.length < 3) {
+//         errors.push("❌ Ім'я має містити 3 символи або більше!");
+//     } else {
+//         this.name = formAsksName;
+//     };
 
-    const formAsksEmail = prompt("Введіть email").trim();
-    if (!formAsksEmail) {
-        errors.push("❌ Поле 'Email' не може бути порожнім!");
-    } else if (formAsksEmail.length < 15) {
-        errors.push("❌ Email закороткий!");
-    } else if (!formAsksEmail.includes("@") || !formAsksEmail.includes(".")) {
-        errors.push("❌ Email повинен містити '@' та '.'!");
-    } else {
-        this.email = formAsksEmail;
-    };
+//     const formAsksEmail = prompt("Введіть email").trim();
+//     if (!formAsksEmail) {
+//         errors.push("❌ Поле 'Email' не може бути порожнім!");
+//     } else if (formAsksEmail.length < 15) {
+//         errors.push("❌ Email закороткий!");
+//     } else if (!formAsksEmail.includes("@") || !formAsksEmail.includes(".")) {
+//         errors.push("❌ Email повинен містити '@' та '.'!");
+//     } else {
+//         this.email = formAsksEmail;
+//     };
 
-    const formAsksPassword = prompt("Введіть пароль").trim();
-    if (!formAsksPassword) {
-        errors.push("❌ Поле 'Пароль' не має бути пустим!");
-    } else if (formAsksPassword.length < 6) {
-        errors.push("❌ Пароль має містити 6 символів або більше!");
-    } else {
-        this.password = formAsksPassword;
-    };
+//     const formAsksPassword = prompt("Введіть пароль").trim();
+//     if (!formAsksPassword) {
+//         errors.push("❌ Поле 'Пароль' не має бути пустим!");
+//     } else if (formAsksPassword.length < 6) {
+//         errors.push("❌ Пароль має містити 6 символів або більше!");
+//     } else {
+//         this.password = formAsksPassword;
+//     };
 
-    if (errors.length > 0) {
-        return errors.join("\n");
-    };
+//     if (errors.length > 0) {
+//         return errors.join("\n");
+//     };
 
-    return `✅ Вітаємо, ${this.name}! Ви успішно увійшли в систему.`;
-};
+//     return `✅ Вітаємо, ${this.name}! Ви успішно увійшли в систему.`;
+// };
 
-console.log(user.login());
+// console.log(user.login());
 
 
 //todo [4]
@@ -246,33 +242,33 @@ console.log(
 //? то колір тексту поля title в консолі повинен бути червоний.
 //! Код виконаного завдання
 
-const movie = {
-    title: "Зелена книга",
-    director: "Пітер Фарреллі",
-    year: 2018,
-    rating: 9.2,
-};
+// const movie = {
+//     title: "Зелена книга",
+//     director: "Пітер Фарреллі",
+//     year: 2018,
+//     rating: 9.2,
+// };
 
-movie.ConsolesBoolean = function (rating) {
-    if (rating > 8) {
-        return true;
-    } else if (rating <= 8) {
-        return false;
-    }; 
-};
+// movie.ConsolesBoolean = function (rating) {
+//     if (rating > 8) {
+//         return true;
+//     } else if (rating <= 8) {
+//         return false;
+//     }; 
+// };
  
-console.log(movie.ConsolesBoolean(movie.rating));
+// console.log(movie.ConsolesBoolean(movie.rating));
 
-if (movie.ConsolesBoolean(movie.rating)) {
-    console.log("%c Зелена книга", "color: green");
-} else {
-    console.log("%c Зелена книга", "color: red");
- };
+// if (movie.ConsolesBoolean(movie.rating)) {
+//     console.log("%c Зелена книга", "color: green");
+// } else {
+//     console.log("%c Зелена книга", "color: red");
+//  };
 
-console.log(movie.director);
+// console.log(movie.director);
 
-console.log(movie.year);
+// console.log(movie.year);
 
-console.log(movie.rating);
+// console.log(movie.rating);
 
 console.log("--------------------------------------------------");
