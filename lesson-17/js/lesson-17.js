@@ -41,7 +41,11 @@ console.log(
 
 console.log("--------------------------------------------------");
 
+const picture = document.querySelector('img');
 
+const src = './images/angry-capybara.jpeg';
+    
+picture.src = src;
 
 //todo [3]
 console.log(
@@ -57,7 +61,11 @@ console.log(
 
 console.log("--------------------------------------------------");
 
+const link = document.querySelector('.link');
 
+const href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+
+link.href = href;
 
 //todo [4]
 console.log(
@@ -69,5 +77,11 @@ console.log(
 //? до першого елемента списку 
 //? та змінити його вміст на новий текст. 
 //! Код виконаного завдання
+
+const listItem = document.querySelector('.list-element');
+
+const textContent = 'NEW HOME';
+
+listItem.textContent = textContent;
 
 console.log("--------------------------------------------------");
