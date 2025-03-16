@@ -155,6 +155,15 @@ const products = [
 
 const getAllPropValues = function (arr, prop) {
     //! твій код
+    let result = [];
+
+    for (const item of arr) {
+        if (prop in item) {
+            result = [...result, item[prop]];
+        };
+    };
+
+    return result;
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
@@ -173,8 +182,13 @@ console.log(
 //? Повертає загальну вартість продукту (ціна * кількість).
 //? Викличи функції для перевірки працездатності твоєї реалізації.
 //! Код виконаного завдання
-const calculateTotalPrice = function (allProdcuts, productName) {
+const calculateTotalPrice = function (allProducts, productName) {
     //! твій код
+    for (const product of allProducts) {
+        if (product.name === productName) {
+            return product.price * product.quantity;
+        }
+    }
 };
 
 //! Викличи функції для перевірки працездатності твоєї реалізації.
@@ -193,5 +207,96 @@ console.log(
 //? Є об'єкт account в якому необхідно реалізувати методи 
 //? для роботи з балансом та історією транзакцій.
 //! Код виконаного завдання
+
+const Transaction = {
+    DEPOSIT: 'deposit',
+    WITHDRAW: 'withdraw',
+};
+
+//todo: Кожна транзакція - це об'єкт з властивостями: id, type і amount
+
+const account = {
+    //todo: Поточний баланс рахунку
+    balance: 0,
+    //todo:  Історія транзакцій
+    transactions: [],
+
+    transactionId: 1,
+
+    //todo:  Метод створює і повертає об'єкт транзакції.
+    //todo:  Приймає суму і тип транзакції.
+    createTransaction(amount, type) {
+        const transactionsObject = {
+            id: this.transactions.length + 1,
+            type,
+            amount
+        }
+
+        console.log(transactionsObject);
+        return transactionsObject;
+    },
+
+    //todo:  Метод відповідає за додавання суми до балансу.
+    //todo:  Приймає суму танзакції.
+    //todo:  Викликає createTransaction для створення об'єкта транзакції
+    //todo:  після чого додає його в історію транзакцій
+    deposit(amount) {
+        this.balance += amount;
+        const newTransaction = this.createTransaction(amount, Transaction.DEPOSIT);
+        this.transactions.push(newTransaction)
+        return console.log(this.deposit);
+    },
+
+
+    //todo:  Метод відповідає за зняття суми з балансу.
+    //todo:  Приймає суму танзакції.
+    //todo:  Викликає createTransaction для створення об'єкта транзакції
+    //todo:  після чого додає його в історію транзакцій.
+    //todo:  Якщо amount більше, ніж поточний баланс, виводь повідомлення
+    //todo:  про те, що зняття такої суми не можливо, недостатньо коштів.
+    withdraw(amount) {
+        this.balance -= amount;
+        const newTransaction = this.createTransaction(amount, Transaction.WITHDRAW);
+        this.transactions.push(newTransaction)
+        return console.log(this.deposit);
+    },
+
+    //todo:  Метод повертає поточний баланс
+    getBalance() {
+        return this.balance;
+    },
+
+    //todo:  Метод шукає іd повертає об'єкт транзакції по id
+    getTransactionDetails(id) {
+        const newTransaction = this.transactions.find(t => t.id === id);
+        if (newTransaction) {
+            console.log("Деталі транзакції:", newTransaction);
+            return newTransaction;
+        } else {
+            console.log("Транзакцію не знайдено.");
+            return null;
+        };
+    },
+
+    //todo:  Метод повертає кількість коштів
+    //todo:  певного типу транзакції з усієї історії транзакцій
+    getTransactionTotal(type) {
+            const total = this.transactions
+                .filter(transaction => transaction.type === type)
+                .reduce((sum, transaction) => sum + transaction.amount, 0);
+
+            console.log(`Загальна сума для "${type}": ${total} грн.`);
+            return total;
+    }
+};
+
+account.deposit(5000);
+account.withdraw(1200);
+account.deposit(3000);
+account.withdraw(500);
+account.deposit(2000);
+account.getBalance();
+account.getTransactionTotal("deposit");
+account.getTransactionTotal("withdraw");
 
 console.log("--------------------------------------------------");  

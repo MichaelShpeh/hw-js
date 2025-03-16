@@ -153,7 +153,6 @@ createTransaction(amount, type) {
 
     console.log(transactionsObject);
     return transactionsObject;
-    return console.log(this.deposit);
 },
 
 //todo:  Метод відповідає за додавання суми до балансу.
