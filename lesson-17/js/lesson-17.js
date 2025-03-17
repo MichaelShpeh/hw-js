@@ -43,9 +43,7 @@ console.log("--------------------------------------------------");
 
 const picture = document.querySelector('img');
 
-const src = './images/angry-capybara.jpeg';
-    
-picture.src = src;
+picture.setAttribute("src", "./images/angry-capybara.jpeg");
 
 //todo [3]
 console.log(

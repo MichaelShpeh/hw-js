@@ -15,7 +15,7 @@ const user = {
 };
 //! Код виконаного завдання
 
-let userBefore = user;
+let userBefore = structuredClone(user);
 
 console.log("user before:", userBefore);
 
