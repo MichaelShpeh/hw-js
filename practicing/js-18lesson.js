@@ -63,6 +63,14 @@ console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
 
 //todo: Крок-2
 
+items.forEach(element => {
+    const h2 = element.querySelector('h2').textContent;
+    const elementsCount = element.querySelectorAll('ul > li').length;
+
+    console.log(`Категорія: ${h2}`);
+    console.log(`Кількість елементів: ${elementsCount}`);
+});
+
 console.log("----------------------------------------------------------------");
 
 
@@ -91,6 +99,8 @@ const ingredients = [
 //? в список ul.ingredients.
 //? 🔸 Для створення DOM-вузлів використовуй document.createElement().
 //! Код виконаного завдання
+
+
 
 console.log("----------------------------------------------------------------");
 
@@ -157,5 +167,39 @@ console.log(
 //? 🔸 Додай слухачі кліків на кнопки, 
 //?    виклики функцій та оновлення інтерфейсу
 //! Код виконаного завдання
+
+let counter = 0;
+
+const counterValue = document.querySelector('#value');
+
+const incrementButton = document.querySelector('[data-action="increment"]')
+
+const decrementButton = document.querySelector('[data-action="decrement"]')
+
+console.log("Лiчильник", counter);
+
+const increment = function() {
+    counter += 1;
+
+    counterValue.textContent = counter;
+
+    return counter;
+};
+
+const decrement = function() {
+    counter -= 1;
+
+    counterValue.textContent = counter;
+
+    return counter;
+};
+
+console.log("Додавання", increment());
+
+console.log("Віднімання", decrement());
+
+incrementButton.addEventListener('click', increment);
+decrementButton.addEventListener('click', decrement);
+
 
 console.log("----------------------------------------------------------------");
