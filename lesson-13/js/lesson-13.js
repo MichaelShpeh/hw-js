@@ -38,13 +38,13 @@ console.log(
 //? та виведи вконсоль всі властивості 
 //? як змінні з такими ж іменами,
 //? або заміни імена на схожі, якщо це необхідно.
-const userB = { mango: 'Mango', two: 2 };
+const userB = { name: 'Mango', age: 2 };
 //! Код виконаного завдання
 
-const { mango, two } = userB;
+const { name: nameUserB, age: ageUserB } = userB;
 
-console.log("mango: ", mango);
-console.log("two: ", two);
+console.log("mango: ", nameUserB);
+console.log("age: ", ageUserB);
 
 console.log("--------------------------------------------------");
 
@@ -70,7 +70,7 @@ const employeePerformance = {
         },
         {
             poly: 12,
-            mangoSecond: 17,
+            mango: 17,
             ajax: 4,
         },
         {
@@ -87,7 +87,7 @@ const {
     count,
     employeePerformanceLists: [
         { ann, david: davidFirst, helen, lorence },
-        { poly, mangoSecond, ajax },
+        { poly, mango: secondMango, ajax },
         { lux, david: davidSecond, kiwi, chelsy }
     ]
 } = employeePerformance;
@@ -104,7 +104,7 @@ console.log("lorence: ", lorence);
 
 console.log("poly: ", poly);
 
-console.log("mango: ", mangoSecond);
+console.log("mango: ", secondMango);
 
 console.log("ajax: ", ajax);
 
@@ -133,14 +133,14 @@ const employeeSalaries = {
     secondcount: 6,
     employeeSalaryLists: [
         {
-            thirdmango: 100,
-            thirdpoly: 150,
+            mango: 100,
+            poly: 150,
             alfred: 80,
         },
         {
-            thirdkiwi: 200,
-            thirdlux: 50,
-            thirdchelsy: 150,
+            kiwi: 200,
+            lux: 50,
+            chelsy: 150,
         }
     ],
 };
@@ -149,24 +149,24 @@ const employeeSalaries = {
 const {
     secondcount,
     employeeSalaryLists: [
-        { thirdmango, thirdpoly, alfred },
-        { thirdkiwi, thirdlux, thirdchelsy }
+        { mango: thirdMango, poly: thirdPoly, alfred },
+        { kiwi: thirdKiwi, lux: thirdLux, chelsy: thirdChelsy }
     ]
 } = employeeSalaries;
 
 console.log("count: ", secondcount);
 
-console.log("mango: ", thirdmango);
+console.log("mango: ", thirdMango);
 
-console.log("poly: ", thirdpoly);
+console.log("poly: ", thirdPoly);
 
 console.log("alfred: ", alfred);
 
-console.log("kiwi: ", thirdkiwi);
+console.log("kiwi: ", thirdKiwi);
 
-console.log("lux: ", thirdlux);
+console.log("lux: ", thirdLux);
 
-console.log("chelsy: ", thirdchelsy);
+console.log("chelsy: ", thirdChelsy);
 
 console.log("--------------------------------------------------");
 
