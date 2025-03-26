@@ -135,7 +135,9 @@ console.log(
 );
 //? Отримати масив імен користувачів за статтю (поле gender).
 const getUsersWithGender = (users, gender) => {
-    //! твій код
+    const usersByGender = users.filter(user => user.gender === gender);
+
+    return usersByGender;
 };
 
 console.log(getUsersWithGender(users, 'male')); //! [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
