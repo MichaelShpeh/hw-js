@@ -1,31 +1,8 @@
-// //todo var.1
-// function example1(arr) {
-//     arr.reduce((acc, element, index) => {
-//         console.log(`acc: ${acc} index: ${index} element: ${element}`);
-//     }, 0);
-// }
-// example1(["Робітник1", "Робітник2", "Робітник3"]);
-
-// function example2(arr) {
-//     arr.map((element, index) => {
-//         console.log(`index: ${index} element: ${element}`);
-//     }, 0);
-// }
-
-// example2(["Робітник1", "Робітник2", "Робітник3"]);
-
-// function example3(arr) {
-//     arr.reduce((element, index) => {
-//         console.log(`index: ${index} element: ${element}`);
-//     }, 0);
-// }
-// example3(["Робітник1", "Робітник2", "Робітник3"]); 
-
-
-
-
-
-
+//todo [0 - Робота з масивом об’єктів]
+console.log(
+    "%c [0 - Робота з масивом об’єктів] ",
+    "color: yellow; background-color: #2274A5",
+);
 //! Для виконання всіх завдань вкористовуй цей масив об'єктів:
 const users = [
     {
@@ -116,30 +93,76 @@ const users = [
 console.log("users:", users);
 console.log("--------------------------------------------------");
 
+//todo [1]
+console.log(
+    "%c [1] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Отримати загальну суму балансу (поле balance) всіх користувачів.
+const calculateTotalBalance = users => {
+    //! твій код
+    return users.reduce((acc, user) => acc + user.balance, 0);
+};
+
+console.log(calculateTotalBalance(users)); //! 20916
+console.log("--------------------------------------------------");
+
+
+
+//todo [2]
+console.log(
+    "%c [2] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Отримати масив імен всіх користувачів у яких є друг із зазначеним ім'ям.
+const getUsersWithFriend = (users, friendName) => {
+    //! твій код
+    return users
+        .filter(user => user.friends.includes(friendName))
+        .map(user => user.name);
+};
+
+console.log(getUsersWithFriend(users, 'Briana Decker')); //! [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Goldie Gentry')); //! [ 'Elma Head', 'Sheree Anthony' ]
+console.log("--------------------------------------------------");
+
+
 
 //todo [3]
 console.log(
     "%c [3] ",
     "color: yellow; background-color: #2274A5",
 );
-//? Отримати масив імен користувачів за статтю (поле gender).
-//todo: var.1
-const getUsersWithGender1 = (users, gender) => {
-    //! твій код
-    const allUsersByGender = users.filter(user => user.gender == gender)
-    
-    const allUsersByGenderNames = users.filter(user => user.name)
-
-    return allUsersByGenderNames
-};
-
-const getUsersWithGender2 = (users, gender) => {
+//? Отримати масив імен (поле name) людей,
+//? відсортованих в залежності від кількості їх друзів (поле friends)
+const getNamesSortedByFriendsCount = users => {
     //! твій код
     return users
-        .filter(user => user.gender == gender)
-        .map(user => user.name)
+    .slice()
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map(user => user.name);
 };
 
-console.log(getUsersWithGender1(users, 'male')); //! [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+console.log(getNamesSortedByFriendsCount(users)); //! [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
+console.log("--------------------------------------------------");
 
-console.log(getUsersWithGender2(users, 'male')); //! [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+
+
+//todo [4]
+console.log(
+    "%c [4] ",
+    "color: yellow; background-color: #2274A5",
+);
+//? Отримати масив всіх умінь всіх користувачів (поле skills), 
+//? при цьому не має бути повторюваних умінь 
+//? і вони повинні бути відсортовані в алфавітному порядку.
+const getSortedUniqueSkills = users => {
+    //! твій код
+    return users
+    .map(user => user.skills)
+    .reduce((acc, skills) => acc.concat(skills), [])
+    .filter((skill, index, arr) => arr.indexOf(skill) === index)
+};
+
+console.log(getSortedUniqueSkills(users)); //! [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+console.log("--------------------------------------------------");

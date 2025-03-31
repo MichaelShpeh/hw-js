@@ -41,3 +41,4 @@ for (const { label, color } of colorPickerOptions) {
     button.textContent = label;
     colorPickerWrapper.append(button);
 };
+
