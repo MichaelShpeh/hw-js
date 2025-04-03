@@ -73,7 +73,12 @@ console.log(
 */
 //! Код виконаного завдання
 
+const input = document.getElementById("name-input");
+const span = document.getElementById("name-output");
 
+input.addEventListener("input", (changeSpan) => {
+    span.textContent = changeSpan.currentTarget.value.trim() || "НЕЗНАЙОМЕЦЬ";
+});
 
 console.log("--------------------------------------------------");
 
