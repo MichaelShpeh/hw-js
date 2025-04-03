@@ -25,30 +25,30 @@ console.log(
 */
 //! Код виконаного завдання
 
-const form = document.querySelector('.form');
+// const form = document.querySelector('.form');
 
-console.log("form: ", form);
+// console.log("form: ", form);
 
-const checkedInput = form.querySelector("input:checked");
+// const checkedInput = form.querySelector("input:checked");
 
-console.log("checkedInput: ", checkedInput);
+// console.log("checkedInput: ", checkedInput);
 
-const changeColor = function (event) {
-    console.log("event.target:", event.target);
-    console.log("event.currentTarget:", event.currentTarget);
+// const changeColor = function (event) {
+//     console.log("event.target:", event.target);
+//     console.log("event.currentTarget:", event.currentTarget);
 
-    const input = event.target;
+//     const input = event.target;
 
-    console.log(input.name);
-    console.log(input.value);
+//     console.log(input.name);
+//     console.log(input.value);
 
-    const body = document.querySelector('body');
+//     const body = document.querySelector('body');
 
-    console.log('body: ', body);
-    body.style.backgroundColor = input.value;
- };
+//     console.log('body: ', body);
+//     body.style.backgroundColor = input.value;
+//  };
 
-form.addEventListener("change", changeColor);
+// form.addEventListener("change", changeColor);
 
 
 
@@ -72,6 +72,8 @@ console.log(
 <h1>Привіт, <span id="name-output">незнайомець</span>!</h1>
 */
 //! Код виконаного завдання
+
+
 
 console.log("--------------------------------------------------");
 
@@ -113,6 +115,20 @@ console.log(
 }
 */
 //! Код виконаного завдання
+
+const input = document.getElementById('validation-input');
+
+console.log("input: ", input);
+
+const inspectsInput = function () {
+    console.log("input.dataset.length:", input.dataset.length);
+    console.log("input.value.length:", input.value.length);
+    if (input.value.length >= Number(input.dataset.length) ) {
+        console.log("Умова вірна!");
+     };
+};
+
+input.addEventListener("blur", inspectsInput);
 
 console.log("--------------------------------------------------");
 

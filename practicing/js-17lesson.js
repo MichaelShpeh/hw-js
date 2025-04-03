@@ -19,3 +19,4 @@ console.log('space: ', space);
 button.textContent = space;
 
 console.log('textContent: ', button.textContent);
+
