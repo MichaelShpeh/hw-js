@@ -66,6 +66,12 @@ const galleryItems = [
 
 const galleryContainer = document.querySelector(".js-gallery");
 const lightboxImage = document.querySelector(".lightbox__image");
+const gallery = document.querySelector(".gallery");
+const modal = document.querySelector(".lightbox");
+const closeButton = document.querySelector(".lightbox__button");
+const overlay = document.querySelector(".lightbox__overlay");
+const currentPhotoText = document.querySelector(".current-photo");
+const descriptionText = document.querySelector(".description");
 
 const galleryMarkup = galleryItems
     .map(({ preview, original, description }) => {
@@ -99,11 +105,6 @@ galleryContainer.addEventListener("click", (event) => {
   lightboxImage.src = originalSrc;
   lightboxImage.alt = altText;
 });
-
-const gallery = document.querySelector(".gallery");
-const modal = document.querySelector(".lightbox");
-const closeButton = document.querySelector(".lightbox__button");
-const overlay = document.querySelector(".lightbox__overlay");
 
 gallery.addEventListener("click", (event) => {
   const target = event.target;
@@ -154,15 +155,25 @@ leftButton.addEventListener("click", () => {
   updateModalImage(currentIndex);
 });
 
+document.addEventListener("keydown", (event) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    if (event.key === "ArrowRight") {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        updateModalImage(currentIndex);
+    } else if (event.key === "ArrowLeft") {
+        currentIndex =
+            (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        updateModalImage(currentIndex);
+    }
+});
+
 function closeModal() {
   console.log("Закриваємо модалку");
   modal.classList.remove("is-open");
   lightboxImage.src = "";
   lightboxImage.alt = "";
 }
-
-const currentPhotoText = document.querySelector(".current-photo");
-const descriptionText = document.querySelector(".description");
 
 function updateModalImage(index) {
   const item = galleryItems[index];
