@@ -68,7 +68,7 @@ const galleryContainer = document.querySelector(".js-gallery");
 const lightboxImage = document.querySelector(".lightbox__image");
 
 const galleryMarkup = galleryItems
-  .map(({ preview, original, description }) => {
+    .map(({ preview, original, description }) => {
     return `
       <li class="gallery__item">
         <a class="gallery__link" href="${original}">
@@ -81,6 +81,7 @@ const galleryMarkup = galleryItems
         </a>
       </li>
     `;
+      
   })
   .join("");
 
@@ -158,4 +159,16 @@ function closeModal() {
   modal.classList.remove("is-open");
   lightboxImage.src = "";
   lightboxImage.alt = "";
+}
+
+const currentPhotoText = document.querySelector(".current-photo");
+const descriptionText = document.querySelector(".description");
+
+function updateModalImage(index) {
+  const item = galleryItems[index];
+  lightboxImage.src = item.original;
+  lightboxImage.alt = item.description;
+
+  currentPhotoText.textContent = `Фото ${index + 1} з ${galleryItems.length}`;
+  descriptionText.textContent = item.description;
 }
