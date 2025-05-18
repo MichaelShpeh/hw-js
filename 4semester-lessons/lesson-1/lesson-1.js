@@ -99,29 +99,63 @@ galleryContainer.addEventListener("click", (event) => {
   lightboxImage.alt = altText;
 });
 
-
 const gallery = document.querySelector(".gallery");
 const modal = document.querySelector(".lightbox");
 const closeButton = document.querySelector(".lightbox__button");
+const overlay = document.querySelector(".lightbox__overlay");
 
 gallery.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target.classList.contains("gallery__image")) {
-        modal.classList.add("is-open");
-    }
+  const target = event.target;
+  if (target.classList.contains("gallery__image")) {
+    modal.classList.add("is-open");
+  }
+
+  const originalSrc = target.dataset.source;
+  const altText = target.alt;
+
+  currentIndex = galleryItems.findIndex(
+    (item) => item.original === originalSrc
+  );
+
+  updateModalImage(currentIndex);
 });
 
 closeButton.addEventListener("click", (event) => {
-    modal.classList.remove("is-open")
+  modal.classList.remove("is-open");
 });
- 
+
+closeButton.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
-    modal.classList.remove("is-open");
+    closeModal();
   }
 });
 
-const overlay = document.querySelector(".lightbox__overlay");
-overlay.addEventListener("click", () => {
-  modal.classList.remove("is-open");
+const leftButton = document.querySelector(".left-button");
+const rightButton = document.querySelector(".right-button");
+
+let currentIndex = 0;
+
+function updateModalImage(index) {
+  const { original, description } = galleryItems[index];
+  lightboxImage.src = original;
+  lightboxImage.alt = description;
+}
+
+rightButton.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % galleryItems.length;
+  updateModalImage(currentIndex);
 });
+
+leftButton.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+  updateModalImage(currentIndex);
+});
+
+function closeModal() {
+  console.log("Закриваємо модалку");
+  modal.classList.remove("is-open");
+  lightboxImage.src = "";
+  lightboxImage.alt = "";
+}
