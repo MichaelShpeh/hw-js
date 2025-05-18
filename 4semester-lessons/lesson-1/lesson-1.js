@@ -65,6 +65,7 @@ const galleryItems = [
 ];
 
 const galleryContainer = document.querySelector(".js-gallery");
+const lightboxImage = document.querySelector(".lightbox__image");
 
 const galleryMarkup = galleryItems
   .map(({ preview, original, description }) => {
@@ -84,3 +85,32 @@ const galleryMarkup = galleryItems
   .join("");
 
 galleryContainer.innerHTML = galleryMarkup;
+
+galleryContainer.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const target = event.target;
+  if (!target.classList.contains("gallery__image")) return;
+
+  const originalSrc = target.dataset.source;
+  const altText = target.alt;
+
+  lightboxImage.src = originalSrc;
+  lightboxImage.alt = altText;
+});
+
+
+const gallery = document.querySelector(".gallery");
+const modal = document.querySelector(".lightbox");
+const closeButton = document.querySelector(".lightbox__button");
+
+gallery.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.classList.contains("gallery__image")) {
+        modal.classList.add("is-open");
+    }
+});
+
+closeButton.addEventListener("click", (event) => {
+    modal.classList.remove("is-open")
+ });
