@@ -1,66 +1,84 @@
 /*! Додайте стилізацію ваших єлементів тут */
 
 body {
-    background-color: rgba(125, 125, 125, 0.633);
-    background-image: url(../images/background.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  height: 100;
+  background-color: rgba(125, 125, 125, 0.633);
+  background-image: url(../images/background.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pages-link {
+  width: 200px;
+  height: 25px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+  margin-bottom: 40px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pages-link:hover {
+  color: indigo;
 }
 
 .title-main {
-    height: 95px;
-    width: 650px;
-    text-align: center;
-    line-height: 3em;
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 40px;
-    margin: 10px 0px 50px 0px;
+  height: 95px;
+  width: 650px;
+  text-align: center;
+  line-height: 3em;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+  margin: 10px 0px 50px 0px;
 }
 
 .list {
-    width: 1000px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 0 auto;
-    border-radius: 40px;
-    overflow: auto;
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  border-radius: 40px;
+  overflow: auto;
 }
 
 .list::-webkit-scrollbar {
-    width: 12px;
-
+  width: 12px;
 }
 
 .list::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
 }
 
 .list::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 20px;
-    border: 3px solid rgba(0, 0, 0, 0.5);
-    /* рамка під колір фону */
+  background-color: #888;
+  border-radius: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  /* рамка під колір фону */
 }
 
 .list::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+  background-color: #555;
 }
 
 .link {
-    color: aliceblue;
-    transition-property: color, fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: aliceblue;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover {
-    color: indigo;
+  color: indigo;
 }
