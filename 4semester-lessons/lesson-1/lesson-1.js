@@ -113,4 +113,15 @@ gallery.addEventListener("click", (event) => {
 
 closeButton.addEventListener("click", (event) => {
     modal.classList.remove("is-open")
- });
+});
+ 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    modal.classList.remove("is-open");
+  }
+});
+
+const overlay = document.querySelector(".lightbox__overlay");
+overlay.addEventListener("click", () => {
+  modal.classList.remove("is-open");
+});
