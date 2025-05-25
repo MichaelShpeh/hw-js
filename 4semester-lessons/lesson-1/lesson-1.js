@@ -70,6 +70,8 @@ const gallery = document.querySelector(".gallery");
 const modal = document.querySelector(".lightbox");
 const closeButton = document.querySelector(".lightbox__button");
 const overlay = document.querySelector(".lightbox__overlay");
+const leftButton = document.querySelector(".left-button");
+const rightButton = document.querySelector(".right-button");
 const currentPhotoText = document.querySelector(".current-photo");
 const descriptionText = document.querySelector(".description");
 
@@ -133,9 +135,6 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
-
-const leftButton = document.querySelector(".left-button");
-const rightButton = document.querySelector(".right-button");
 
 let currentIndex = 0;
 
