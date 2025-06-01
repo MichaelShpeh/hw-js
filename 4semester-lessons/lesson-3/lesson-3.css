@@ -1,0 +1,23 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    list-style: none;
+}
+
+.list:last-child {
+    margin-bottom: 0px;
+}
+
+.list-element {
+    margin-bottom: 50px;
+}
+
+.picture {
+    height: 200px;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: block;
+}

@@ -1,0 +1,28 @@
+//! знаходимо всі зображення
+const pictures = document.querySelectorAll(".picture");
+
+//! callback функція для IntersectionObserver
+const loadsPictures = (entries) => {
+    
+    entries.forEach((entry) => {
+
+      //! перевірка чи зображення є в полі зору
+      if (entry.isIntersecting) {
+        const img = entry.target;
+
+        //! Завантажуємо зображення
+        img.src = img.dataset.src;
+
+        console.log("Зображення в полі зору:", img.dataset.src);
+      }
+    });
+};
+
+//! Створення обсерверу
+const observer = new IntersectionObserver(loadsPictures, {
+  rootMargin: "30px", //! Трохи раніше починає завантаження
+  threshold: 0.1,
+});
+
+//! спостереження за зображеннями
+pictures.forEach((img) => observer.observe(img));
