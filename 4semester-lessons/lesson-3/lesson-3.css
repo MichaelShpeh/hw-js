@@ -1,9 +1,9 @@
 .list {
+    height: 3250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 1000px;
     list-style: none;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .picture {
-    height: 200px;
+    height: 600px;
   width: 100%;
   background-color: #f0f0f0;
   display: block;

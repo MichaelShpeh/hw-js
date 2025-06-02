@@ -25,7 +25,7 @@ const loadsPictures = (entries) => {
 //! Створення обсерверу
 const observer = new IntersectionObserver(loadsPictures, {
   rootMargin: "30px", //! Трохи раніше починає завантаження
-  threshold: 0.1,
+  threshold: 0.7,
 });
 
 //! спостереження за зображеннями
