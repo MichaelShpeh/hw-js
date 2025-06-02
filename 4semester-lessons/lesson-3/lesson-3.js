@@ -1,6 +1,11 @@
 //! знаходимо всі зображення
 const pictures = document.querySelectorAll(".picture");
 
+const loadImage = (img) => { 
+    img.src = img.dataset.src;
+};
+
+
 //! callback функція для IntersectionObserver
 const loadsPictures = (entries) => {
 
@@ -15,7 +20,7 @@ const loadsPictures = (entries) => {
           observer.unobserve(img);
 
         //! Завантажуємо зображення
-        img.src = img.dataset.src;
+          loadImage(entry.target);
 
         console.log("Зображення в полі зору:", img.dataset.src);
       }
