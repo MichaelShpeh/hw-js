@@ -3,12 +3,16 @@ const pictures = document.querySelectorAll(".picture");
 
 //! callback функція для IntersectionObserver
 const loadsPictures = (entries) => {
-    
+
     entries.forEach((entry) => {
 
       //! перевірка чи зображення є в полі зору
       if (entry.isIntersecting) {
-        const img = entry.target;
+          const img = entry.target;
+          
+
+          //! припинення стеження за елементом
+          observer.unobserve(img);
 
         //! Завантажуємо зображення
         img.src = img.dataset.src;
