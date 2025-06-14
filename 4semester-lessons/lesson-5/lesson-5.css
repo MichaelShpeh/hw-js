@@ -78,7 +78,7 @@ body {
 #game-button {
   font-family: "Press Start 2P";
   color: #fff;
-  background: none;
+  background: #000;
   border: none;
   cursor: pointer;
 }
