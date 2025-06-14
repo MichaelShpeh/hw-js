@@ -67,12 +67,6 @@ body {
   text-align: center;
 }
 
-#status {
-  font-family: "Press Start 2P";
-  color: #fff;
-  margin-bottom: 50px;
-}
-
 #key {
   font-family: "Roboto";
   font-weight: 700;
@@ -81,7 +75,7 @@ body {
   margin-bottom: 50px;
 }
 
-#newGameBtn {
+#game-button {
   font-family: "Press Start 2P";
   color: #fff;
   background: none;
