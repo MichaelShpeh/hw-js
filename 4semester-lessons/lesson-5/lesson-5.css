@@ -82,3 +82,11 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.styles {
+    font-family: "Press Start 2P";
+  color: #fff;
+  background: #000;
+  border: none;
+  cursor: pointer;
+}
